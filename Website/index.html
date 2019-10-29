@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="css.css">
+<title>Go Learn</title>
+</head>
+<body>
+
+<h1 id ="titel">Go learn</h1>
+
+<form>
+    <fieldset>
+     <legend>Instellingen</legend>
+
+     <h2>Gamemode</h2>
+     <br>
+     <input type="radio" name="mode" value="classic"> Classic
+     <input type="radio" name="mode" value="tijdbom"> Tijdbom
+    
+    <br> <br>
+     <hr>
+     <br>
+     <h2>Spelers (2-6)</h2>
+     <h5>Aantal spelers</h5>
+     <input class="inputnumber" id="spelers" type="number" maxlength="1" name="aantalspelers" min="2" max="6" placeholder="2-6" >
+    <div>
+       
+     <input type="text" name="fname" placeholder="Naam">
+     <input type="text" name="fname" placeholder="Naam">
+     <input type="text" name="fname" placeholder="Naam">
+     <input type="text" name="fname" placeholder="Naam">
+     <input type="text" name="fname" placeholder="Naam">
+    </div>
+    <br>
+    
+    <hr>
+
+    <h2>Tijd</h2>
+    <h5>Tijd in minuten:</h5>
+    <input type="number" name="aantalTijd" min="1" max="10" placeholder="Tijd">
+
+
+    </fieldset>
+   </form>
+  
+   <canvas id="myCanvas" width="500" height="500"></canvas>
+
+
+   <script>var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    
+    // centre or center for US :) the drawing
+    var x = canvas.width / 2;
+    var y = canvas.height / 2;
+    
+    // number of days
+    var days = 1;
+    
+    // number of hours
+    var hours = 6;
+    
+    // one segment represents an hour so divide degrees by hours
+    var segmentWidth = 360 / hours;
+    
+    // begin at 0 and end at one segment width
+    var startAngle = 0;
+    var endAngle = segmentWidth;
+    
+    // how thick you want a segment
+    var segmentDepth = 160;
+    
+    function init(){
+        for(var i=1; i <= days; i++) {
+            drawSegments(i*segmentDepth);
+        } 
+    }
+    
+    function drawSegments(radius) {   
+        for(var i = 0; i < hours; i++){         
+          context.beginPath();
+          context.arc(x, y, radius, (startAngle * Math.PI / 180), (endAngle * Math.PI / 180), false);
+          context.lineWidth = segmentDepth;
+          context.strokeStyle = '#'+(Math.random()*0xFFFFEF<<0).toString(16);
+          context.stroke();
+    
+          // increase per segment        
+          startAngle += segmentWidth;
+          endAngle += segmentWidth;
+        }
+    }
+   
+    // start drawing our chart
+    init();
+    }
+
+    var hours = document.getElementById("spelers");
+    function start(){
+        alert(hours.value);
+    }
+    </script>
+
+<button type="button" onclick="start()" >Click Me!</button>
+
+</body>
+</html> 
