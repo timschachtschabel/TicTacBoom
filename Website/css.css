@@ -32,7 +32,7 @@ form{
     position: fixed;
     top:0;
     right:220px;
-    background-color: red;
+    background-color: orange;
     width: 200px;
     height: 200px;
 }
@@ -40,23 +40,31 @@ form{
     position: fixed;
     top:0;
     right:440px;
-    background-color: red;
+    background-color: yellow;
     width: 200px;
     height: 200px;
 }
 #speler4{
     position: fixed;
-    top:0;
+    bottom: 0;
     right:0;
-    background-color: red;
+    background-color: green;
     width: 200px;
     height: 200px;
 }
 #speler5{
     position: fixed;
-    top:0;
-    right:0;
-    background-color: red;
+    bottom: 0;
+    right:220px;
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+}
+#speler6{
+    position: fixed;
+    bottom: 0;
+    right:440px;
+    background-color: purple;
     width: 200px;
     height: 200px;
 }
