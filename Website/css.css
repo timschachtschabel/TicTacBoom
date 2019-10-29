@@ -82,3 +82,14 @@ form{
     display: flex;
     justify-content: space-around;
 }
+
+
+
+/* Game page start */
+
+
+.clock {
+    margin: 0-auto !important;
+    text-align: center;
+    margin: 100px 0px 100px 0px;
+}
