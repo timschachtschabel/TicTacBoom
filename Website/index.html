@@ -5,52 +5,60 @@
 </head>
 <body>
 
-<h1 id ="titel">Go learn</h1>
+<div class="container">
 
-<form>
-    <fieldset>
-     <legend>Instellingen</legend>
+    <h1 id ="titel">Go learn</h1>
 
-     <h2>Gamemode</h2>
-     <br>
-     <input type="radio" name="mode" value="classic"> Classic
-     <input type="radio" name="mode" value="tijdbom"> Tijdbom
-    
-    <br> <br>
-     <hr>
-     <br>
-     <h2>Spelers (2-6)</h2>
-     <h5>Aantal spelers</h5>
-     <input class="inputnumber" id="spelers" type="number" maxlength="1" name="aantalspelers" min="2" max="6" placeholder="2-6" >
-    <div>
-       
-     <input type="text" name="fname" placeholder="Naam">
-     <input type="text" name="fname" placeholder="Naam">
-     <input type="text" name="fname" placeholder="Naam">
-     <input type="text" name="fname" placeholder="Naam">
-     <input type="text" name="fname" placeholder="Naam">
+    <form>
+        <fieldset>
+        <legend>Instellingen</legend>
+
+        <h2>Gamemode</h2>
+        <br>
+        <input type="radio" name="mode" value="classic"> Classic
+        <input type="radio" name="mode" value="tijdbom"> Tijdbom
+        
+        <br> <br>
+        <hr>
+        <br>
+        <h2>Spelers (2-6)</h2>
+        <h5>Aantal spelers</h5>
+        <input class="inputnumber" id="spelers" type="number" maxlength="1" name="aantalspelers" min="2" max="6" placeholder="2-6" >
+        <div>
+        
+        <input type="text" name="fname" placeholder="Naam">
+        <input type="text" name="fname" placeholder="Naam">
+        <input type="text" name="fname" placeholder="Naam">
+        <input type="text" name="fname" placeholder="Naam">
+        <input type="text" name="fname" placeholder="Naam">
+        </div>
+        <br>
+        
+        <hr>
+
+        <h2>Tijd</h2>
+        <h5>Tijd in minuten:</h5>
+        <input type="number" name="aantalTijd" min="1" max="10" placeholder="Tijd">
+
+
+        </fieldset>
+    </form>
+
+    <div class="spelers-row-1 flex">
+        <div id="speler1"></div>
+        <div id="speler2"></div>
+        <div id="speler3"></div>
     </div>
-    <br>
+
+    <div class="spelers-row-2 flex">
+        <div id="speler4"></div>
+        <div id="speler5"></div>
+        <div id="speler6"></div>
+    </div>
     
-    <hr>
+    <button type="button" onclick="start()" >Click Me!</button>
 
-    <h2>Tijd</h2>
-    <h5>Tijd in minuten:</h5>
-    <input type="number" name="aantalTijd" min="1" max="10" placeholder="Tijd">
-
-
-    </fieldset>
-   </form>
-   <div class="spelers">
-       <div id="speler1"></div>
-       <div id="speler2"></div>
-       <div id="speler3"></div>
-       <div id="speler4"></div>
-       <div id="speler5"></div>
-       <div id="speler6"></div>
 </div>
- 
-<button type="button" onclick="start()" >Click Me!</button>
 
 </body>
 </html> 

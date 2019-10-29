@@ -20,52 +20,65 @@ form{
 .spelers{
     padding-right:60px;
 }
+
+.spelers-row-1 {
+    margin: 40px;
+}
+
+.spelers-row-2 {
+    margin: 40px;
+}
+
 #speler1{
-    position: fixed;
+    /* position: fixed;
     top:0;
-    right:0;
+    right:0; */
     background-color: red;
     width: 200px;
     height: 200px;
 }
 #speler2{
-    position: fixed;
+    /* position: fixed;
     top:0;
-    right:220px;
+    right:220px; */
     background-color: orange;
     width: 200px;
     height: 200px;
 }
 #speler3{
-    position: fixed;
+    /* position: fixed;
     top:0;
-    right:440px;
+    right:440px; */
     background-color: yellow;
     width: 200px;
     height: 200px;
 }
 #speler4{
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    right:0;
+    right:0; */
     background-color: green;
     width: 200px;
     height: 200px;
 }
 #speler5{
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    right:220px;
+    right:220px; */
     background-color: blue;
     width: 200px;
     height: 200px;
 }
 #speler6{
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    right:440px;
+    right:440px; */
     background-color: purple;
     width: 200px;
     height: 200px;
 }
 
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
