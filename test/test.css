@@ -36,6 +36,10 @@ form{
     margin: 200px;
 }
 
+.timebomb h1 {
+    text-align: center;
+}
+
 /* Helper classes */
 .flex {
     display: flex;

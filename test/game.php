@@ -14,14 +14,18 @@ $countdowntime = $_GET['aantalTijd'] * 60;
 $names = $_GET['fname'];
 
 $colors = array("red", "green", "blue", "yellow", "orange", "purple");
-
+$usedColors = array();
+$int = 0;
 foreach ($names as $name) {
     if (!empty($name)) {
-    $playerColor = array_rand($colors);
+
+        $playerColor = $colors[$int];
+        $int = $int + 1;
+
     
 ?>
 
-    <div id="speler" style="background-color:<?php echo $colors[$playerColor]; ?>;">
+    <div id="speler" style="background-color:<?php echo $playerColor; ?>;">
         <h2> <?php echo $name; ?> </h2>
     </div>
 
@@ -35,8 +39,8 @@ foreach ($names as $name) {
 
 
 <div class="timebomb">
-
-    <h1 id="time" style="text-align: center;"><?php echo $_GET['aantalTijd']; ?></h1>
+    <h1>Nog</h1>
+    <h1 id="time" style="text-align: center;"> <?php echo $_GET['aantalTijd']; ?></h1>
 
 </div>
 
