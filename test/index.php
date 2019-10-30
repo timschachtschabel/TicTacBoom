@@ -1,48 +1,28 @@
 <?php
 include 'components/head.php';
+include 'components/database.php';
 ?>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body class="startbackground">
 
-<div class="container">
-    <div class="dataform">
-        <form action="game.php" method="get">
-            <fieldset>
-            <legend>Instellingen</legend>
+    <div class="logo">
+        <img src="img/transparant.png" alt="tiktakboem">
+    </div>
 
-            <h2>Gamemode</h2>
-            <br>
-            <input type="radio" name="mode" value="classic"> Classic
-            <input type="radio" name="mode" value="tijdbom"> Tijdbom
-
-            <br> <br>
-            <hr>
-            <br>
-            <h2>Spelers (2-6)</h2>
-            <h5>Aantal spelers</h5>
-            <input class="inputnumber" id="spelers" type="number" maxlength="1" name="aantalspelers" min="2" max="6" placeholder="2-6" >
-            <div>
-
-            <input type="text" name="fname[]" placeholder="Naam">
-            <input type="text" name="fname[]" placeholder="Naam">
-            <input type="text" name="fname[]" placeholder="Naam">
-            <input type="text" name="fname[]" placeholder="Naam">
-            <input type="text" name="fname[]" placeholder="Naam">
-            <input type="text" name="fname[]" placeholder="Naam">
+    <div class="namefield">
+        <form action="">
+            <div class="form-group col-md-8 col-md-offset-4 nameInput">
+                <input type="text" class="form-control" id="naam" placeholder="Typ hier je naam">
             </div>
-            <br>
-
-            <hr>
-
-            <h2>Tijd</h2>
-            <h5>Tijd in minuten:</h5>
-            <input type="number" name="aantalTijd" min="1" max="10" placeholder="Tijd">
-            <br>
-            <hr>
-            <input type="submit">
-
-            </fieldset>
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-danger btn-lg startscreensubmit" value="Start" name="" id="">
+            </div>
         </form>
-    </div>    
-</div>
+    </div>
 
 <?php
 include 'components/foot.php';
