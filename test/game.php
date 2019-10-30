@@ -4,8 +4,6 @@ include 'components/head.php';
 </head>
 <body>
 
-<p>Aantal tijd = <?php echo $_GET ['aantalTijd']; ?> minuten </p>
-
 <div class="playerAmount flex">
 
 <?php 
@@ -61,7 +59,7 @@ var timeAmount = <?php echo json_encode($_GET['aantalTijd']); ?>
             display.textContent = minutes + ":" + seconds;
 
             if (--timer < 0) {
-                timer = duration;
+                alert("Tijd is op");
             }
         }, 1000);
     }
