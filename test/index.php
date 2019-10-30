@@ -25,6 +25,7 @@ include 'components/head.php';
         <input type="text" name="fname[]" placeholder="Naam">
         <input type="text" name="fname[]" placeholder="Naam">
         <input type="text" name="fname[]" placeholder="Naam">
+        <input type="text" name="fname[]" placeholder="Naam">
         </div>
         <br>
 

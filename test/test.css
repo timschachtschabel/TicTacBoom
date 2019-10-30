@@ -22,3 +22,13 @@ form{
     width: 200px;
     height: 200px;
 }
+
+.timebomb {
+    margin: 200px;
+}
+
+/* Helper classes */
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
