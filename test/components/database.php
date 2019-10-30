@@ -1,8 +1,17 @@
 <?php
 
-$servername = "pi.local";
-$username = "woorden";
-$password = "buzword";
+// Raspberry pi connection
+
+// $servername = "0.0.0.0";
+// $username = "woorden";
+// $password = "buzword";
+// $db = "tictacboom";
+
+
+// local connection
+$servername = "localhost";
+$username = "root";
+$password = "";
 $db = "tictacboom";
 
 // Create connection
