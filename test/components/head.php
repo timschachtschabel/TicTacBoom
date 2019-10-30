@@ -8,7 +8,13 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="test.css">
     <link rel="stylesheet" href="onur.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <link rel="script" href="bootstrap/js/bootstrap.js">
+    <link rel="script" href="bootstrap/js/bootstrap.min.js">
 
     <title>TicTacBoom</title>
 
