@@ -1,6 +1,8 @@
 <?php
 include 'components/head.php';
 ?>
+</head>
+<body>
 
 <p>Aantal tijd = <?php echo $_GET ['aantalTijd']; ?> minuten </p>
 
