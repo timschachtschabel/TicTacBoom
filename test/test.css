@@ -2,8 +2,22 @@
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     margin: 5px;
+    color: white;
+    font-size: 20px;
+    
+    
 }
 
+body{
+    background-image: url('img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black !important;
+}
+
+label{
+    font-size: 20px;
+}
 .container {
     margin: auto;
 }
