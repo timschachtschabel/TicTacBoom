@@ -37,7 +37,7 @@ require_once 'components/database.php';
       </div>
 
       <div class="form-group row">
-        
+
       <?php if($_GET['playername'] == 'admin') { ?>  
 
         <label for="example-number-input" name="aantalTijd" placeholder="Tijd" class="col-2 col-form-label" min="2">Tijd in minuten</label>
@@ -68,21 +68,24 @@ require_once 'components/database.php';
 
     </div>
 
-    <div class="back">
+    <!-- <div class="back">
       <button class="btn btn-warning"><a href="index.php"> Terug naar start</a></button>
-    </div>
+    </div> -->
+
+    <form action="index.php" method="get">
+        <input type="submit" value="Terug naar start" class="btn btn-warning" name="backtostart">
+        <input type="hidden" name="currentuser" value="<?php echo $_GET['playername'] ?>">
+    </form>
   </div>
 </div> 
 
 <script type="text/javascript">
    $(function () 
   {
-    var id=id1;
-    alert("enterd "+id);
     document.getElementById("disp").innerHTML ="hi";
         $.ajax({
         url:"components/database.php ",
-        method:"POST", //First change type to method here
+        method:"POST",
         data:{
           name: "name",
           isadmin: "0" 
