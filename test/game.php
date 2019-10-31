@@ -9,7 +9,8 @@ $countdowntime = $_GET['aantalTijd'] * 60;
 
 $names = $_GET['fname'];
 
-$colors = array("red", "green", "blue", "yellow", "orange", "purple");
+$colors = array("#bce7fd", "#c492b1", "#0cce6b", "#dced31", "#ef2d56", "#ed7d3a");
+
 $usedColors = array();
 $int = 0;
 foreach ($names as $name) {
@@ -20,11 +21,11 @@ foreach ($names as $name) {
 
     
 ?>
-
+<div id="mobiel">
     <div id="speler" style="background-color:<?php echo $playerColor; ?>;">
         <h2> <?php echo $name; ?> </h2>
     </div>
-
+</div>
 <?php
 
     }
@@ -35,7 +36,7 @@ foreach ($names as $name) {
 
 
 <div class="timebomb">
-    <h1>Nog</h1>
+    <h1 id="tijdtext">Nog</h1>
     <h1 id="time" style="text-align: center;"> <?php echo $_GET['aantalTijd']; ?></h1>
 
 </div>

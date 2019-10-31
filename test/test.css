@@ -35,7 +35,7 @@ legend{
 form{
     max-width: 50%;
     margin: auto;
-    background-color: #ddddddb3;
+    background-color: transparent;
     border-radius: 5px;
     padding: 10px;
 }
@@ -81,6 +81,42 @@ body > div.namefield > form > div.form-group.text-center > input {
 
 /* Helper classes */
 .flex {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-around;
+}
+.hoi{
+    background-color:#ddddddb3;
+}
+#speler{
+    border-radius: 5px;
+    text-align: center;
+    display: table;
+    border-radius: 50%;
+    
+}
+h2
+{
+    display:table-cell;
+     vertical-align:middle;
+     
+    
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .playerAmount{
+       flex-wrap: wrap;
+   
+    }
+    #speler{
+        width: 150px;
+        height: 150px;
+    }
+    #tijdtext{
+        position: float;
+        text-align: center;
+    }
+
+    
 }
