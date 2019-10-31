@@ -69,9 +69,10 @@ require_once 'includes/database.php';
 
         </div>
 
-        <div class="back">
-            <button class="btn btn-warning"><a href="index.php"> Terug naar start</a></button>
-        </div>
+      <form action="index.php" method="get">
+        <input type="submit" value="Terug naar start" class="btn btn-warning" name="backtostart">
+        <input type="hidden" name="currentuser" value="<?php echo $_GET['playername'] ?>">
+    </form>
     </div>
 </div>
 

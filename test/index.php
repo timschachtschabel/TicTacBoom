@@ -18,6 +18,18 @@ include 'includes/database.php';
     </form>
 </div>
 
+<?php 
+    if (isset($_GET['backtostart'])) { 
+        $deleteCurrentUser = ("DELETE FROM naam WHERE naam = '".$_GET["currentuser"]."'"); 
+
+        if (mysqli_query($conn, $deleteCurrentUser)) { 
+            echo "New record created successfully"; 
+            } else { 
+            echo "Error: " . $deleteCurrentUser . "<br>" . mysqli_error($conn); 
+            } 
+        } 
+?>
+
 <?php
 include 'includes/foot.php';
 ?>
