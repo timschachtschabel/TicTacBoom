@@ -17,4 +17,7 @@
     <link rel="script" href="bootstrap/js/bootstrap.min.js">
 
     <title>TicTacBoom</title>
+    
+    </head>
+<body>    
 

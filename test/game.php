@@ -1,8 +1,6 @@
 <?php
 include 'components/head.php';
 ?>
-</head>
-<body>
 
 <div class="playerAmount flex">
 

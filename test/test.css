@@ -40,7 +40,7 @@ form{
     margin: auto;
 }
 
-/* Game screen */
+/* Begin Game screen */
 #speler{
     width: 200px;
     height: 200px;
@@ -53,8 +53,10 @@ form{
 .timebomb h1 {
     text-align: center;
 }
+/* End Game screen */
 
-/* Startscreen page */
+
+/* Begin Startscreen page */
 .startbackground {
     background-color: #008000;
 }
@@ -80,5 +82,5 @@ body > div.namefield > form > div.form-group.text-center > input {
 /* Helper classes */
 .flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
