@@ -22,4 +22,7 @@ if (!$conn) {
    die("Connection failed: " . mysqli_connect_error());
 }
 echo "Connected successfully";
+
+
+$getname = "SELECT naam FROM naam";
 ?>

@@ -1,5 +1,6 @@
 <?php
 include 'components/head.php';
+require_once 'components/database.php';
 ?>
 
 <div class="container">
@@ -36,29 +37,67 @@ include 'components/head.php';
       </div>
 
       <div class="form-group row">
+        
+      <?php if($_GET['playername'] == 'admin') { ?>  
+
         <label for="example-number-input" name="aantalTijd" placeholder="Tijd" class="col-2 col-form-label" min="2">Tijd in minuten</label>
         <div class="col-10">
           <input class="form-control" type="number" name="aantalTijd" id="example-number-input">
           <br>
           <input type="submit">
         </div>
+    <?php } ?>   
 
     </form>
-  
+
     <div class="playernames">
       <?php
-          $insertname = "INSERT INTO naam (naam, isadmin)
-          VALUES ($_GET[naam], '0', 'john@example.com')";
+      if (isset($_GET['start'])) {
+        $sql = "INSERT INTO naam (naam, isadmin)
+        VALUES ('" . $_GET["playername"] . "','0')";
+      }
 
-          echo $_GET['naam'];
-      ?>  
+      if (mysqli_query($conn, $sql)) {
+        echo "New record created successfully";
+      } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      }
+      ?> 
 
-
+    <p id="playpername"></p>
 
     </div>
-</div>
 
+    <div class="back">
+      <button class="btn btn-warning"><a href="index.php"> Terug naar start</a></button>
+    </div>
+  </div>
+</div> 
 
+<script type="text/javascript">
+   $(function () 
+  {
+    var id=id1;
+    alert("enterd "+id);
+    document.getElementById("disp").innerHTML ="hi";
+        $.ajax({
+        url:"components/database.php ",
+        method:"POST", //First change type to method here
+        data:{
+          name: "name",
+          isadmin: "0" 
+        },
+        success:function(response) {
+         document.getElementById("playername").innerHTML =response;
+       },
+       error:function(){
+        alert("error");
+       }
+
+      });
+  }); 
+</script>
+      
 <?php
 include 'components/foot.php';
 ?>
