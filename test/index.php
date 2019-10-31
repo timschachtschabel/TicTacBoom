@@ -8,7 +8,7 @@ include 'components/database.php';
     </div>
 
     <div class="namefield">
-        <form action="">
+        <form action="form.php" method="get">
             <div class="form-group col-md-8 col-md-offset-4 nameInput">
                 <input type="text" class="form-control" id="naam" placeholder="Typ hier je naam">
             </div>
@@ -17,7 +17,7 @@ include 'components/database.php';
             </div>
         </form>
     </div>
-
+    
 <?php
 include 'components/foot.php';
 ?>
