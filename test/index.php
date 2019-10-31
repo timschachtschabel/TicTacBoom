@@ -1,6 +1,6 @@
 <?php
-include 'components/head.php';
-include 'components/database.php';
+include 'includes/head.php';
+include 'includes/database.php';
 ?>
 
 <div class="logo">
@@ -10,7 +10,7 @@ include 'components/database.php';
 <div class="namefield">
     <form action="form.php" method="get">
         <div class="form-group col-md-8 col-md-offset-4 nameInput">
-            <input type="text" class="form-control" name="playername" id="naam" placeholder="Typ hier je naam">
+            <input type="text" class="form-control" name="playername" id="naam" placeholder="Kies een naam">
         </div>
         <div class="form-group text-center">
             <input type="submit" class="btn btn-danger btn-lg startscreensubmit" value="Start" name="start" id="">
@@ -19,9 +19,5 @@ include 'components/database.php';
 </div>
 
 <?php
-
-?>
-
-<?php
-include 'components/foot.php';
+include 'includes/foot.php';
 ?>

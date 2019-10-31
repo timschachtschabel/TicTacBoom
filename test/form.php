@@ -1,57 +1,58 @@
 <?php
-include 'components/head.php';
-require_once 'components/database.php';
+include 'includes/head.php';
+require_once 'includes/database.php';
 ?>
 
 <div class="container">
-  <div class="dataform">
+    <div class="dataform">
 
-    <form action="game.php" method="get">
-      <legend>Instellingen</legend>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Categorie</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <form action="game.php" method="get">
+            <legend>Instellingen</legend>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Categorie</label>
+                <select class="form-control" id="exampleFormControlSelect1">
 
-          <option>Topografie</option>
-          <option>Dieren</option>
+                    <option>Topografie</option>
+                    <option>Dieren</option>
 
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Aanstal spelers</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Aanstal spelers</label>
+                <select class="form-control" id="exampleFormControlSelect1">
 
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-        </select>
-        <br>
-        <input type="text" class="form-control" name="fname[]" placeholder="Naam">
-        <input type="text" class="form-control" name="fname[]" placeholder="Naam">
-        <input type="text" class="form-control" name="fname[]" placeholder="Naam">
-        <input type="text" class="form-control" name="fname[]" placeholder="Naam">
-        <input type="text" class="form-control" name="fname[]" placeholder="Naam">
-        <input type="text" class="form-control" name="fname[]" placeholder="Naam">
-      </div>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+                <br>
+                <input type="text" class="form-control" name="fname[]" placeholder="Naam">
+                <input type="text" class="form-control" name="fname[]" placeholder="Naam">
+                <input type="text" class="form-control" name="fname[]" placeholder="Naam">
+                <input type="text" class="form-control" name="fname[]" placeholder="Naam">
+                <input type="text" class="form-control" name="fname[]" placeholder="Naam">
+                <input type="text" class="form-control" name="fname[]" placeholder="Naam">
+            </div>
 
-      <div class="form-group row">
-        
-      <?php if($_GET['playername'] == 'admin') { ?>  
+            <div class="form-group row">
 
-        <label for="example-number-input" name="aantalTijd" placeholder="Tijd" class="col-2 col-form-label" min="2">Tijd in minuten</label>
-        <div class="col-10">
-          <input class="form-control" type="number" name="aantalTijd" id="example-number-input">
-          <br>
-          <input type="submit">
-        </div>
-    <?php } ?>   
+                <?php if($_GET['playername'] == 'admin') { ?>
 
-    </form>
+                <label for="example-number-input" name="aantalTijd" placeholder="Tijd" class="col-2 col-form-label"
+                    min="2">Tijd in minuten</label>
+                <div class="col-10">
+                    <input class="form-control" type="number" name="aantalTijd" id="example-number-input">
+                    <br>
+                    <input type="submit">
+                </div>
+                <?php } ?>
 
-    <div class="playernames">
-      <?php
+        </form>
+
+        <div class="playernames">
+            <?php
       if (isset($_GET['start'])) {
         $sql = "INSERT INTO naam (naam, isadmin)
         VALUES ('" . $_GET["playername"] . "','0')";
@@ -62,42 +63,41 @@ require_once 'components/database.php';
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
-      ?> 
+      ?>
 
-    <p id="playpername"></p>
+            <p id="playpername"></p>
 
+        </div>
+
+        <div class="back">
+            <button class="btn btn-warning"><a href="index.php"> Terug naar start</a></button>
+        </div>
     </div>
-
-    <div class="back">
-      <button class="btn btn-warning"><a href="index.php"> Terug naar start</a></button>
-    </div>
-  </div>
-</div> 
+</div>
 
 <script type="text/javascript">
-   $(function () 
-  {
-    var id=id1;
-    alert("enterd "+id);
-    document.getElementById("disp").innerHTML ="hi";
-        $.ajax({
-        url:"components/database.php ",
-        method:"POST", //First change type to method here
-        data:{
-          name: "name",
-          isadmin: "0" 
+$(function() {
+    var id = id1;
+    alert("enterd " + id);
+    document.getElementById("disp").innerHTML = "hi";
+    $.ajax({
+        url: "components/database.php ",
+        method: "POST", //First change type to method here
+        data: {
+            name: "name",
+            isadmin: "0"
         },
-        success:function(response) {
-         document.getElementById("playername").innerHTML =response;
-       },
-       error:function(){
-        alert("error");
-       }
+        success: function(response) {
+            document.getElementById("playername").innerHTML = response;
+        },
+        error: function() {
+            alert("error");
+        }
 
-      });
-  }); 
+    });
+});
 </script>
-      
+
 <?php
-include 'components/foot.php';
+include 'includes/foot.php';
 ?>
