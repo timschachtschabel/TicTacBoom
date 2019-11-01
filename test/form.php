@@ -28,33 +28,37 @@ require_once 'components/database.php';
           <option>6</option>
         </select>
         <br>
+        <!-- <input type="text" class="form-control" name="fname[]" placeholder="Naam">
         <input type="text" class="form-control" name="fname[]" placeholder="Naam">
         <input type="text" class="form-control" name="fname[]" placeholder="Naam">
         <input type="text" class="form-control" name="fname[]" placeholder="Naam">
         <input type="text" class="form-control" name="fname[]" placeholder="Naam">
-        <input type="text" class="form-control" name="fname[]" placeholder="Naam">
-        <input type="text" class="form-control" name="fname[]" placeholder="Naam">
+        <input type="text" class="form-control" name="fname[]" placeholder="Naam"> -->
+
+        <div id="playernames">
+
+        </div>
       </div>
 
       <div class="form-group row">
 
-      <?php if($_GET['playername'] == 'admin') { ?>  
+        <?php if ($_GET['playername'] == 'admin') { ?>
 
-        <label for="example-number-input" name="aantalTijd" placeholder="Tijd" class="col-2 col-form-label" min="2">Tijd in minuten</label>
-        <div class="col-10">
-          <input class="form-control" type="number" name="aantalTijd" id="example-number-input">
-          <br>
-          <input type="submit">
-        </div>
-    <?php } ?>   
+          <label for="example-number-input" name="aantalTijd" placeholder="Tijd" class="col-2 col-form-label" min="2">Tijd in minuten</label>
+          <div class="col-10">
+            <input class="form-control" type="number" name="aantalTijd" id="example-number-input">
+            <br>
+            <input type="submit">
+          </div>
+        <?php } ?>
 
     </form>
 
     <div class="playernames">
       <?php
       if (isset($_GET['start'])) {
-        $sql = "INSERT INTO naam (naam, isadmin)
-        VALUES ('" . $_GET["playername"] . "','0')";
+        $sql = "INSERT INTO naam (naam)
+        VALUES ('" . $_GET["playername"] . "')";
       }
 
       if (mysqli_query($conn, $sql)) {
@@ -62,45 +66,38 @@ require_once 'components/database.php';
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
-      ?> 
+      ?>
 
-    <p id="playpername"></p>
+      <p id="playpername"></p>
 
     </div>
 
-    <!-- <div class="back">
-      <button class="btn btn-warning"><a href="index.php"> Terug naar start</a></button>
-    </div> -->
-
     <form action="index.php" method="get">
-        <input type="submit" value="Terug naar start" class="btn btn-warning" name="backtostart">
-        <input type="hidden" name="currentuser" value="<?php echo $_GET['playername'] ?>">
+      <input type="submit" value="Terug naar start" class="btn btn-warning" name="backtostart">
+      <input type="hidden" name="currentuser" value="<?php echo $_GET['playername'] ?>">
     </form>
   </div>
-</div> 
+</div>
 
 <script type="text/javascript">
-   $(function () 
-  {
-    document.getElementById("disp").innerHTML ="hi";
-        $.ajax({
-        url:"components/database.php ",
-        method:"POST",
-        data:{
-          name: "name",
-          isadmin: "0" 
-        },
-        success:function(response) {
-         document.getElementById("playername").innerHTML =response;
-       },
-       error:function(){
-        alert("error");
-       }
+    $(document).ready(function () {
 
-      });
-  }); 
+function load() {
+    $.ajax({ 
+        type: "GET",
+        url: "getnames.php",
+        dataType: "html",                
+        success: function (response) {
+            $("#playernames").html(response);
+            setTimeout(load, 5000)
+        }
+    });
+}
+
+load();
+});
 </script>
-      
+
 <?php
 include 'components/foot.php';
 ?>
