@@ -36,6 +36,12 @@ require_once 'components/database.php';
         <input type="text" class="form-control" name="fname[]" placeholder="Naam">
         <input type="text" class="form-control" name="fname[]" placeholder="Naam"> -->
 
+        <div class="playeramount">
+          <div id="playercount">
+
+          </div>
+        </div>    
+          
         <div id="playernames">
 
         </div>
@@ -95,6 +101,18 @@ function load() {
     });
 }
 
+function loadcount() {
+    $.ajax({ 
+        type: "GET",
+        url: "getplayercount.php",
+        dataType: "html",                
+        success: function (response) {
+            $("#playercount").html(response);
+            setTimeout(loadcount, 5000)
+        }
+    });
+}
+loadcount();
 load();
 });
 </script>

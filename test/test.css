@@ -40,6 +40,18 @@ form{
     padding: 10px;
 }
 
+#playernames { 
+    font-size: 1.3rem; 
+    border: 2px dashed black; 
+    border-radius: 10px; 
+    text-align: center; 
+    padding: 10px; 
+} 
+
+.playeramount {
+    text-align: center;
+}
+
 /* Begin Game screen */
 #speler{
     width: 200px;
