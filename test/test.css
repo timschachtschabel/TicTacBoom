@@ -48,6 +48,7 @@ form{
 
 .timebomb {
     margin: 200px;
+    color: whitesmoke;
 }
 
 .timebomb h1 {
@@ -88,6 +89,8 @@ body > div.namefield > form > div.form-group.text-center > input {
 .hoi{
     background-color:#ddddddb3;
 }
+
+/*opmaak spelers*/
 #speler{
     border-radius: 5px;
     text-align: center;
@@ -98,12 +101,11 @@ body > div.namefield > form > div.form-group.text-center > input {
 h2
 {
     display:table-cell;
-     vertical-align:middle;
-     
+     vertical-align:middle;     
     
 }
 
-
+/*mobiele styling*/
 @media only screen and (max-width: 1300px) {
     .playerAmount{
        flex-wrap: wrap;
@@ -116,6 +118,14 @@ h2
     #tijdtext{
         position: float;
         text-align: center;
+    }
+
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .timebomb{
+        margin: 80px;
     }
 
     

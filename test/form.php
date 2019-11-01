@@ -4,7 +4,7 @@ require_once 'components/database.php';
 ?>
 
 <div class="container">
-  <div class="dataform">
+  <div class="dataform hoi">
 
     <form action="game.php" method="get">
       <legend>Instellingen</legend>
@@ -28,6 +28,7 @@ require_once 'components/database.php';
           <option>6</option>
         </select>
         <br>
+
         <!-- <input type="text" class="form-control" name="fname[]" placeholder="Naam">
         <input type="text" class="form-control" name="fname[]" placeholder="Naam">
         <input type="text" class="form-control" name="fname[]" placeholder="Naam">
@@ -62,7 +63,7 @@ require_once 'components/database.php';
       }
 
       if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        // echo "New record created successfully";
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
