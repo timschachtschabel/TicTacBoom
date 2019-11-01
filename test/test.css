@@ -52,6 +52,11 @@ form{
     text-align: center;
 }
 
+.backtostart {
+    text-align: center;
+    margin: auto;
+}
+
 /* Begin Game screen */
 #speler{
     width: 200px;
