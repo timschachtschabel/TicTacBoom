@@ -1,0 +1,38 @@
+$(document).ready(function() {
+  //@ FIRST PAGE NAME FORM
+  document.querySelector(".name-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    var naam = document.getElementById("name").value;
+    var url = "includes/controller.php";
+    var create = {
+      cmd: "c",
+      table: "users",
+      args: { name: esql(naam) }
+    };
+    var read = {
+      cmd: "r",
+      table: "users",
+      cols: "name,isadmin",
+      clause: "name LIKE '%p%'"
+    };
+    var update = {
+      cmd: "u",
+      table: "users",
+      args: { name: "Josp", isadmin: 3 },
+      clause: "name = 'Jaap'"
+    };
+    var deleter = {
+      cmd: "d",
+      table: "users",
+      clause: "name = 'Jaap'"
+    };
+
+    ajax(url, create)
+      .done(function(result) {
+        console.log(result);
+      })
+      .fail(function(err) {
+        console.log(url + " " + err.statusText);
+      });
+  });
+});
